@@ -22,6 +22,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "nested_form"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -36,5 +37,5 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+ #gem 'debugger'
 gem 'test-unit', '~> 3.0'

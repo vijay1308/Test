@@ -8,5 +8,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :role_id
   belongs_to :role
   attr_accessible :name
-  has_many :projects
+  
+  has_many :contributors
+  has_many :projects, :through => :contributors
+  
 end
