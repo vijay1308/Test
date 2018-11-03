@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PMS</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'  %>
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"%>
+
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"%>
+  <%= javascript_include_tag "cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js" %>
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body  class="skin-black wysihtml5-supported  pace-done">
+
+
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, id: "flash_#{name}" %>
+<% end %>
+  <% if user_signed_in?%>
+  <%= render :partial => "layouts/header" %>
+  <div class="wrapper row-offcanvas row-offcanvas-left">
+
+  <%= render :partial => "layouts/sidebar" %>
+ <% end %>
+  <aside class="right-side">         
+<%= yield %>
+  </aside>
+  </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+
+
+See image 1 - We need to update the HOPharm -> Recommendations tab.
+See the changes to the heading highlighted in red.
+The "Recommendations" total (number of recommendations done within the last 7 days), must be related  to the records that is making up the total for the "Interventions" column.
+
+
+ DV 02-11-2018 Change name to "Opportunities" and include all Initial/Timeout/Prophylaxis audits and all ad hoc interventions in the last 7 days (have a tooltip that explains that Opportunities includes all audits and all ad hoc interventions).
+ 
+After the Recomendations column we need a new column called "No F/U" which counts those recommendations that didn't require follow up (answer_needed IS NOT TRUE).
+The totals for "No F/U", "Accepted", "Rejected", "Open" and "Auto Closed" must add up to the "Recommendations" total. The numbers for these columns must be based on the interventions (excluding Nil interventions) linked to the audits/ad hoc interventions that are being included in the "Opportunities" total.
+
+
+The "Auto Closed" total will be records where the interventions weren't accepted or rejected and the record was auto closed.
+All these totals must exclude cancelled Abx records and cancelled interventions. 
+
+See also the MW note.
+
+2018-11-02
+
+Columns:
+
+Opportunities - This is the total number of initial/timeout/prophylaxis audits cemented in the last 7 days + ad-hoc interventions created in the last 7 days. (Excluding for cancelled drugs/interventions.)
+
+Recommendations - This is the total number of interventions related to the above abx_audits, excluding Nil interventions. (And of course excluding cancelled abx/interventions.)
+
+
+###################################
+
+
+
+Pharm account - Alerts - Intervention -> (alert tab on the list view and Alert tab on the WWB drill down)
+
+See images 1 and 2 - We need to show the full intervention list here - not the short list that we are showing in imagee 2
+
+
+6824
+01/11/2018
+- Image 1 - Point 4 is not done
+
+- The "Date Last Seen by IP" is not printing the information of that column - change that to number of days since last seen by IP with blank = never seen - that would also save some space on the SAF Tab screen (because we only need space for 2 digits)
+
+01/11/2018 - see image 1
+
+6792
+
+See image 1 - We need to update the HOPharm -> Recommendations tab.
+See the changes to the heading highlighted in red.
+
+The "Recommendations" total (number of recommendations done within the last 7 days), must be related  to the records that is making up the total for the "Interventions" column.
+The totals for "Accepted", "Rejected", "Open" and "Auto Closed" must be related to the records making up the "Recommendations" total. So these totals, "Accepted", "Rejected", "Open" and "Auto Closed" must add up to the "Recommendations" total.
+The "Auto Closed" total will be records where the interventions weren't accepted or rejected and the record was auto closed.
+All these totals must exclude canceled Abx records and canceled interventions. 
+
+
+
+31/10/2018
+- This change was for when we print the SAF tab and not to change the dots on the actual SAF tab. We need the print button back and the print out should show the letters instead of the dots.
+
+
+
+
+6832
+
+For these reports below, on the month tab only, we need the export to excel option:
+Colonization Events
+Infection Rates
+Notifiable Diseases
+Overall Infection Statistics
+Targeted Events
+Targeted Infection Events
+Targeted Organisms (CA)
+Targeted Organisms (HA OF Only)
+Targeted Organisms (HA)
+
+
+6831
+
+
+6824
+
+The IP SAF tab dots are printed in black and white, so you can't tell what they mean.
+
+When printing the IP SAF tab, please use the following letters instead of dots:
+
+R (instead of red dots)
+G (instead of dark grey dots)
+g (instead of light grey dots)
+B (instead of blue dots)
+Y (instead of yellow dots)
+P (instead of pink dots)
+
+
+6805
+
+
+Abx concordant with policy - Intervention and HOPharm Preferences
+
+We need to create an (automatic) intervention if "Concordant with Guidelines" =  No AND "Documented Reason for Non-Concordance" = No We need this set up in HO preferences so that they can select on an organization basis the indications that should have the "concordant with policy" question.
+The auto intervention should be "Not concordant with policy"
+
+
+
+
+{"cm_dose":"","cm_double_coverage":"","cm_drug":"","cm_duration":"","cm_frequency":"","cm_no_loading":"","cm_route":"","cm_micro_order":null,"cm_antimicrobial":""}

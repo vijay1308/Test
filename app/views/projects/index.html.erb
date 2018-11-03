@@ -1,0 +1,115 @@
+<section class="content">
+                  
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Responsive Hover Table</h3>
+                    <div class="box-tools">
+                        <div class="input-group">
+                            <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
+                            <div class="input-group-btn">
+                                <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>ID</th>
+                            <th>User</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Reason</th>
+                        </tr>
+                        <tr>
+                            <td>183</td>
+                            <td>John Doe</td>
+                            <td>11-7-2014</td>
+                            <td><span class="label label-success">Approved</span></td>
+                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                        </tr>
+                        <tr>
+                            <td>219</td>
+                            <td>Jane Doe</td>
+                            <td>11-7-2014</td>
+                            <td><span class="label label-warning">Pending</span></td>
+                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                        </tr>
+                        <tr>
+                            <td>657</td>
+                            <td>Bob Doe</td>
+                            <td>11-7-2014</td>
+                            <td><span class="label label-primary">Approved</span></td>
+                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                        </tr>
+                        <tr>
+                            <td>175</td>
+                            <td>Mike Doe</td>
+                            <td>11-7-2014</td>
+                            <td><span class="label label-danger">Denied</span></td>
+                            <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                        </tr>
+                    </table>
+                </div><!-- /.box-body -->
+            </div><!-- /.box -->
+        </div>
+    </div>
+ <div id="chart_div" style="width: 900px; height: 500px"></div>
+</section>
+
+
+<h1>Listing projects</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= project.name %></td>
+    <td><%= project.description %></td>
+    <td><%= project.user.name %></td>
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Project', new_project_path %>
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['corechart']});
+
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+</script>
