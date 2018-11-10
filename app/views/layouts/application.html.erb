@@ -9,7 +9,7 @@
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"%>
   <%= javascript_include_tag "cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js" %>
-   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body  class="skin-black wysihtml5-supported  pace-done">
@@ -25,8 +25,8 @@
 
   <%= render :partial => "layouts/sidebar" %>
  <% end %>
-  <aside class="right-side">         
-<%= yield %>
+  <aside class="" style="height:auto;">         
+      <%= yield %>
   </aside>
   </div>
 </body>

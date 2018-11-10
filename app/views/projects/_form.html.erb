@@ -22,8 +22,8 @@
       <%= f.text_area :description %>
     </div>
 
-      <%= f.fields_for :contributos do |task_form| %>
-        <%= select_tag "developer_id", options_for_select(User.all.collect {|a| [a.name, a.id ]}, :multiple => true , :class =>"form-control") %> 
+      <%= f.fields_for :contributos, do |t| %>
+        <%= t.select("user_id", User.all.collect {|a| [a.name, a.id ]}, :multiple => true , :class =>"form-control") %> 
 
       <% end %>
     <div  class="form-group">
