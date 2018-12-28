@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20181103092420) do
+ActiveRecord::Schema.define(:version => 20181110114916) do
 
   create_table "contributors", :force => true do |t|
     t.integer  "project_id"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20181103092420) do
     t.integer  "project_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "status_type_id"
   end
 
   add_index "tasks", ["project_id"], :name => "index_tasks_on_project_id"
